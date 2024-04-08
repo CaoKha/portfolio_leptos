@@ -17,15 +17,9 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-        <Html lang="en" dir="ltr" attr:data-theme="light"/>
 
         // sets the document title
-        <Title text="Welcome to Leptos CSR"/>
         // injects metadata in the <head> of the page
-        <Meta charset="UTF-8"/>
-        <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <Stylesheet id="leptos" href="/style/output.css"/>
-        <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
 
         <Router>
             <Routes>
