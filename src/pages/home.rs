@@ -7,7 +7,7 @@ pub fn Home() -> impl IntoView {
     view! {
         <ErrorBoundary fallback=|errors| {
             view! {
-                <h1>"Uh oh! Something went wrong!"</h1>
+                <h1>"Uh oh! Something went wrong in Home!"</h1>
 
                 <p>"Errors: "</p>
                 // Render a list of errors as strings - good for development purposes
