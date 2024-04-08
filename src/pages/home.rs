@@ -5,25 +5,6 @@ use leptos::*;
 pub fn Home() -> impl IntoView {
     let (count, set_count) = create_signal(0);
     view! {
-        <ErrorBoundary fallback=|errors| {
-            view! {
-                <h1>"Uh oh! Something went wrong in Home!"</h1>
-
-                <p>"Errors: "</p>
-                // Render a list of errors as strings - good for development purposes
-                <ul>
-                    {move || {
-                        errors
-                            .get()
-                            .into_iter()
-                            .map(|(_, e)| view! { <li>{e.to_string()}</li> })
-                            .collect_view()
-                    }}
-
-                </ul>
-            }
-        }>
-
             <div class="my-0 mx-auto max-w-3xl text-center">
                 <h2 class="p-6 text-4xl">"Welcome to Leptos with Tailwind"</h2>
                 <p class="px-10 pb-10 text-left">
@@ -45,6 +26,5 @@ pub fn Home() -> impl IntoView {
                     " | Some more text"
                 </button>
             </div>
-        </ErrorBoundary>
     }
 }
