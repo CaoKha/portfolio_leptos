@@ -76,6 +76,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Remove old node_modules
+        run: rm -rf node_modules
+
       - name: Download and install tailwindcss binary
         run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css --minify
 
