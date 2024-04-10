@@ -17,14 +17,10 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-
-        // sets the document title
-        // injects metadata in the <head> of the page
-
         <Router>
-            <Routes base="yogurt-front".to_owned()>
-            <Route path="/" view=Home/>
-            <Route path="/*" view=NotFound/>
+            <Routes>
+                <Route path="/" view=Home/>
+                <Route path="/*" view=NotFound/>
             </Routes>
         </Router>
     }
