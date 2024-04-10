@@ -44,9 +44,11 @@ jobs:
       - name: Build with Trunk
         run: ./trunk build --release
 
-
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Copy vercel.json to dist
+        run: cp vercel.json ./dist/
 
       - name: Deploy to Vercel & Display URL
         id: deployment
