@@ -27,8 +27,13 @@ jobs:
           cargo clippy
           cargo fmt --check
 
+      - name: Use Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Download and install tailwindcss binary
-        run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css
+        run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css --minify
 
       - name: Download and install Trunk binary
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.2/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
