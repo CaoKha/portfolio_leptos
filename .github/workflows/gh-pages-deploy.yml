@@ -46,9 +46,13 @@ jobs:
       # If using tailwind...
       # - name: Download and install tailwindcss binary
       #   run: npm install -D tailwindcss && npx tailwindcss -i <INPUT/PATH.css> -o <OUTPUT/PATH.css>  # run tailwind
+      - name: Use Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Download and install tailwindcss binary
-        run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css
+        run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css --minify
 
       - name: Download and install Trunk binary
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.4/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
@@ -78,11 +82,11 @@ jobs:
           # token:
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist dir
           path: './dist'
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
