@@ -1,4 +1,4 @@
-name: Release to Vercel
+name: Build and Deploy to Vercel
 
 on:
   push:
