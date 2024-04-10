@@ -51,11 +51,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Remove old node_modules
-        run: rm -rf node_modules
-
       - name: Download and install tailwindcss binary
-        run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css --minify
+        run: npm install -D tailwindcss
 
       - name: Download and install Trunk binary
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.8/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-

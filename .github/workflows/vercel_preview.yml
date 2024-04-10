@@ -77,7 +77,7 @@ jobs:
           node-version: 20
 
       - name: Download and install tailwindcss binary
-        run: npm install -D tailwindcss && npx tailwindcss -i input.css -o style/output.css --minify
+        run: npm install -D tailwindcss
 
       - name: Download and install Trunk binary
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.8/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
@@ -87,7 +87,7 @@ jobs:
 
       - name: Preview Deploy
         id: preview
-        uses: amondnet/vercel-action@latest
+        uses: amondnet/vercel-action@25.2.0
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
