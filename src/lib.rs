@@ -22,9 +22,9 @@ pub fn App() -> impl IntoView {
         // injects metadata in the <head> of the page
 
         <Router>
-            <Routes>
+            <Routes base="yogurt-front".to_owned()>
             <Route path="/" view=Home/>
-            <Route path="/404" view=NotFound/>
+            <Route path="/*" view=NotFound/>
             </Routes>
         </Router>
     }
