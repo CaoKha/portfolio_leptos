@@ -8,13 +8,12 @@ pub fn Home() -> impl IntoView {
     let ua_info = get_ua().expect("user agent should not be empty");
     logging::log!("ua_info: {:?}", ua_info);
     let platform = ua_info.category;
-    let bevy_iframe = move || view! {<p>{format!("You are on {}",platform)}</p>};
+    let bevy_iframe = move || view! { <p>{format!("You are on {}", platform)}</p> };
 
     view! {
         <ErrorBoundary fallback=|errors| {
             view! {
                 <h1>"Uh oh! Something went wrong in Home!"</h1>
-
                 <p>"Errors: "</p>
                 // Render a list of errors as strings - good for development purposes
                 <ul>
@@ -29,10 +28,9 @@ pub fn Home() -> impl IntoView {
                 </ul>
             }
         }>
-
             <NavBar/>
             <main class="relative flex min-h-screen flex-col items-center justify-start p-4">
-            {bevy_iframe}
+                {bevy_iframe}
 
             </main>
         </ErrorBoundary>

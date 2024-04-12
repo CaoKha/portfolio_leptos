@@ -10,6 +10,7 @@ mod composables;
 // Top-Level pages
 use crate::pages::home::Home;
 use crate::pages::not_found::NotFound;
+use crate::pages::portfolio::Portfolio;
 
 /// An app router which renders the homepage and handles 404's
 #[component]
@@ -21,6 +22,7 @@ pub fn App() -> impl IntoView {
         <Router>
             <Routes>
                 <Route path="/" view=Home/>
+                <Route path="/Portfolio" view=Portfolio/>
                 <Route path="/*" view=NotFound/>
             </Routes>
         </Router>

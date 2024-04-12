@@ -18,9 +18,7 @@ pub fn NavBar() -> impl IntoView {
     };
 
     view! {
-        <div
-            class="border-b-2 border-b-slate-100 bg-blue-500/10 font-sans antialiased dark:bg-gray-800/90"
-        >
+        <div class="border-b-2 border-b-slate-100 bg-blue-500/10 font-sans antialiased dark:bg-gray-800/90">
             <nav class="flex flex-wrap items-center justify-between p-2">
                 <div class="flex-no-shrink ml-4 mr-6 mt-1 flex items-center text-white">
                     <A href="">
