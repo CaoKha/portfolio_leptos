@@ -1,5 +1,5 @@
 use leptos::*;
-use yogurt_front::App;
+use portfolio_leptos::App;
 
 fn main() {
     // set up logging

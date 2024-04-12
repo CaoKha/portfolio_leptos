@@ -1,5 +1,5 @@
 [package]
-name = "yogurt-front"
+name = "portfolio_leptos"
 version = "0.1.0"
 edition = "2021"
 authors = ["Kha <nguyencaokha131995@gmail.com>"]
@@ -13,6 +13,9 @@ leptos_router = { version = "0.6", features = ["csr", "nightly"] }
 console_log = "1"
 log = "0.4"
 console_error_panic_hook = "0.1"
+leptos-use = "0.10.6"
+regex = "1.10.4"
+woothee = "0.13.0"
 
 # utils
 # strum = { version = "0.25", features = ["derive", "strum_macros"] }

@@ -1,9 +1,15 @@
+use crate::{components::navbar::NavBar, composables::get_ua};
 use leptos::*;
 
 /// Default Home Page
 #[component]
 pub fn Home() -> impl IntoView {
-    let (count, set_count) = create_signal(0);
+    // let (count, set_count) = create_signal(0);
+    let ua_info = get_ua().expect("user agent should not be empty");
+    logging::log!("ua_info: {:?}", ua_info);
+    let platform = ua_info.category;
+    let bevy_iframe = move || view! {<p>{format!("You are on {}",platform)}</p>};
+
     view! {
         <ErrorBoundary fallback=|errors| {
             view! {
@@ -24,27 +30,11 @@ pub fn Home() -> impl IntoView {
             }
         }>
 
-            <div class="my-0 mx-auto max-w-3xl text-center">
-                <h2 class="p-6 text-4xl">"Welcome to Leptos with Tailwind"</h2>
-                <p class="px-10 pb-10 text-left">
-                    "Tailwind will scan your Rust files for Tailwind class names and compile them into a CSS file."
-                </p>
-                <button
-                    class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
-                    on:click=move |_| set_count.update(|count| *count += 1)
-                >
-                    "Something's here | "
-                    {move || {
-                        if count.get() == 0 {
-                            "Click me!".to_string()
-                        } else {
-                            count.get().to_string()
-                        }
-                    }}
+            <NavBar/>
+            <main class="relative flex min-h-screen flex-col items-center justify-start p-4">
+            {bevy_iframe}
 
-                    " | Some more text"
-                </button>
-            </div>
+            </main>
         </ErrorBoundary>
     }
 }

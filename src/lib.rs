@@ -5,6 +5,7 @@ use leptos_router::*;
 // Modules
 mod components;
 mod pages;
+mod composables;
 
 // Top-Level pages
 use crate::pages::home::Home;
@@ -20,7 +21,7 @@ pub fn App() -> impl IntoView {
         <Router>
             <Routes>
                 <Route path="/" view=Home/>
-                <Route path="/*" view=NotFound/>
+                <Route path="/pfatool_site/:id" view=NotFound/>
             </Routes>
         </Router>
     }
