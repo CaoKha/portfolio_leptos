@@ -21,7 +21,7 @@ pub fn App() -> impl IntoView {
         <Router>
             <Routes>
                 <Route path="/" view=Home/>
-                <Route path="/pfatool_site/:id" view=NotFound/>
+                <Route path="/*" view=NotFound/>
             </Routes>
         </Router>
     }
