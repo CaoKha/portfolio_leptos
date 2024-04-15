@@ -1,4 +1,4 @@
-use crate::{components::navbar::NavBar, composables::get_ua};
+use crate::composables::get_ua;
 use leptos::*;
 
 /// Default Home Page
@@ -8,7 +8,11 @@ pub fn Home() -> impl IntoView {
     let ua_info = get_ua().expect("user agent should not be empty");
     logging::log!("ua_info: {:?}", ua_info);
     let platform = ua_info.category;
-    let bevy_iframe = move || view! { <p>{format!("You are on {}", platform)}</p> };
+    let bevy_iframe = move || view! {
+        <p class="text-base text-slate-700 dark:text-slate-200">
+            {format!("You are on {}", platform)}
+        </p>
+    };
 
     view! {
         <ErrorBoundary fallback=|errors| {
@@ -28,10 +32,8 @@ pub fn Home() -> impl IntoView {
                 </ul>
             }
         }>
-            <NavBar/>
             <main class="relative flex min-h-screen flex-col items-center justify-start p-4">
                 {bevy_iframe}
-
             </main>
         </ErrorBoundary>
     }

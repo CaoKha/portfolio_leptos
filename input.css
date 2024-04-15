@@ -25,3 +25,26 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.active .nav-indicator {
+  width: 4rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85/var(--tw-bg-opacity));
+}
+
+.active .nav-text {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85/var(--tw-text-opacity));
+}
+
+:is(.dark .active .nav-indicator) {
+  width: 4rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240/var(--tw-bg-opacity));
+}
+
+:is(.dark .active .nav-text) {
+  --tw-bg-opacity: 1;
+  color: rgb(226 232 240/var(--tw-text-opacity));
+}
+
