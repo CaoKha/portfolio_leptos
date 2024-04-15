@@ -141,7 +141,7 @@ pub fn Trimble() -> impl IntoView {
                 <div class="mx-5 grid pt-10 lg:mx-10 lg:grid-cols-2 lg:gap-4 lg:pt-52">
                     <div>
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            3: Interpolation
+                            4: Interpolation
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
                             "To obtain data from both the camera and IMU simultaneously without synchronization, 
@@ -183,7 +183,7 @@ pub fn Trimble() -> impl IntoView {
                 <div class="mx-5 pt-10 lg:mx-10">
                     <div>
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            4: Conclusion
+                            5: Conclusion
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
                             "Calibration and synchronization are two crucial techniques in sensor applications. 
@@ -201,6 +201,13 @@ pub fn Trimble() -> impl IntoView {
                             While this resolved the synchronization problem, further optimization is required to maximize precision and 
                             stability."
                         </p>
+
+                        <br/>
+                        <button class="rounded-full bg-slate-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+                            <a href="https://github.com/CaoKha/Synchronization" target="_blank">
+                                <span>Source Code</span>
+                            </a>
+                        </button>
                     </div>
                 </div>
             </section>
