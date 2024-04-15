@@ -61,7 +61,7 @@ pub const EXPERIENCES: [Experience; 4] = [
     }
   ];
 
-pub const PROJECTS: [Project; 2] = [
+pub const PROJECTS: [Project; 3] = [
     Project {
         title: "Finite State Machine Mobile Robot",
         link: "/Projects/SumoRobot",
@@ -73,11 +73,20 @@ pub const PROJECTS: [Project; 2] = [
     },
     Project {
         title: "Sensor Synchronization",
-        link: "/Projects/TrimbleIntern",
+        link: "/Projects/Trimble",
         description:
             "Aligned IMU & camera data by detecting IMU readings before each image capture, marking image timestamps, & creating synchronized IMU data.",
         img_src: "/images/trimble_robot.png",
         tech_stack: &["C++", "CMake", "Boost", "OpenCV", "Python", "FPGA"],
+    },
+    Project {
+        title: "Building Web Applications",
+        link: "/Projects/FFF",
+        description:
+            "Just a classical fullstack developer. I have developed and maintained multiple applications and tools for internal FFF employees",
+        img_src: "/images/fff.png",
+        tech_stack: &["React", "Angular", "HTML", "CSS", "Python", "FastAPI", "Javascript", "Typescript",
+        "PrimeNG", "MaterialUI", "Bootstrap", "TailwindCSS", "Traefik", "Azure", "MongoDB", "Redis"],
     },
 ];
 

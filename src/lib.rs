@@ -12,7 +12,7 @@ use crate::components::navbar::NavBar;
 use crate::pages::home::Home;
 use crate::pages::not_found::NotFound;
 use crate::pages::portfolio::Portfolio;
-use crate::pages::projects::{Projects, sumo_robot::SumoRobot, trimble::Trimble};
+use crate::pages::projects::{Projects, sumo_robot::SumoRobot, trimble::Trimble, fff::FFF};
 
 /// An app router which renders the homepage and handles 404's
 #[component]
@@ -29,7 +29,8 @@ pub fn App() -> impl IntoView {
                     <Route path="/Portfolio" view=Portfolio/>
                     <Route path="/Projects" view=Projects/>
                     <Route path="/Projects/SumoRobot" view=SumoRobot/>
-                    <Route path="/Projects/TrimbleIntern" view=Trimble/>
+                    <Route path="/Projects/Trimble" view=Trimble/>
+                    <Route path="/Projects/FFF" view=FFF/>
                     <Route path="/*" view=NotFound/>
                 </Routes>
             </div>
