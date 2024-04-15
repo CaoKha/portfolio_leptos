@@ -8,12 +8,13 @@ pub fn Home() -> impl IntoView {
     let ua_info = get_ua().expect("user agent should not be empty");
     logging::log!("ua_info: {:?}", ua_info);
     let platform = ua_info.category;
-    let bevy_iframe = move || view! {
+    let bevy_iframe = move || if platform.to_uppercase() != "PC" { 
+        view! {
         <span class="text-base text-slate-700 dark:text-slate-200">
             <p>
                 {format!(
-                    "This is a placeholder for future bevy game. 
-                    Checking User Agent: You are currently on \"{}\". ",
+                    "You are currently on a \"{}\". Hence, you can't see the gizmo game. 
+                    Try to access this page with a laptop to see the gizmo!",
                     platform.to_uppercase(),
                 )}
 
@@ -27,9 +28,16 @@ pub fn Home() -> impl IntoView {
                     </a>
                 </button>
             </span>
-        </span>
-    };
 
+        </span>
+        }
+    } else {
+        view! {
+        <span class="text-base text-slate-700 dark:text-slate-200">
+            <iframe class="w-[1280px] h-[720px]" id="bevy-game" src="/game/index.html" allow="fullscreen"></iframe>
+        </span>
+        }
+    };
     view! {
         <ErrorBoundary fallback=|errors| {
             view! {
