@@ -9,9 +9,25 @@ pub fn Home() -> impl IntoView {
     logging::log!("ua_info: {:?}", ua_info);
     let platform = ua_info.category;
     let bevy_iframe = move || view! {
-        <p class="text-base text-slate-700 dark:text-slate-200">
-            {format!("You are on {}", platform)}
-        </p>
+        <span class="text-base text-slate-700 dark:text-slate-200">
+            <p>
+                {format!(
+                    "This is a placeholder for future bevy game. 
+                    Checking User Agent: You are currently on \"{}\". ",
+                    platform.to_uppercase(),
+                )}
+
+            </p>
+            <p>"This website is made with Leptos, a Rust framework for web apps"</p>
+            <br/>
+            <span class="flex justify-center">
+                <button class="rounded-full bg-slate-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+                    <a href="https://nckportfolio.vercel.app" target="_blank">
+                        <span>Migrating from Nuxt 3</span>
+                    </a>
+                </button>
+            </span>
+        </span>
     };
 
     view! {

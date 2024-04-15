@@ -4,6 +4,7 @@ use crate::composables::PROJECTS;
 pub mod sumo_robot;
 pub mod trimble;
 pub mod fff;
+pub mod allianz;
 
 #[component]
 pub fn Projects() -> impl IntoView {

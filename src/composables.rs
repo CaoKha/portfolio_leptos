@@ -61,7 +61,7 @@ pub const EXPERIENCES: [Experience; 4] = [
     }
   ];
 
-pub const PROJECTS: [Project; 3] = [
+pub const PROJECTS: [Project; 4] = [
     Project {
         title: "Finite State Machine Mobile Robot",
         link: "/Projects/SumoRobot",
@@ -87,6 +87,14 @@ pub const PROJECTS: [Project; 3] = [
         img_src: "/images/fff.png",
         tech_stack: &["React", "Angular", "HTML", "CSS", "Python", "FastAPI", "Javascript", "Typescript",
         "PrimeNG", "MaterialUI", "Bootstrap", "TailwindCSS", "Traefik", "Azure", "MongoDB", "Redis"],
+    },
+    Project {
+        title: "Rewrite git history",
+        link: "/Projects/Allianz",
+        description:
+            "Another day, another legacy project...",
+        img_src: "/images/crab.png",
+        tech_stack: &["Rust", "Python", "C", "C++", "Batch File", "Polars", "Makefile", "Cmake"],
     },
 ];
 
