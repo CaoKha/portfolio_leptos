@@ -6,7 +6,6 @@ use leptos::*;
 pub fn Home() -> impl IntoView {
     // let (count, set_count) = create_signal(0);
     let ua_info = get_ua().expect("user agent should not be empty");
-    logging::log!("ua_info: {:?}", ua_info);
     let platform = ua_info.category;
     let bevy_iframe = move || if platform.to_uppercase() != "PC" { 
         view! {
