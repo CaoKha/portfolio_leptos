@@ -40,7 +40,7 @@ pub fn Home() -> impl IntoView {
     let bevy_iframe = move || {
         view! {
             <span class="text-base text-slate-700 dark:text-slate-200">
-                <iframe class="w-[1280px] h-[720px]" id="bevy-game" src="/game/index.html" allow="fullscreen"></iframe>
+                <iframe class="w-[480px] h-[360px]" id="bevy-game" src="/game/index.html" allow="fullscreen"></iframe>
                 </span>
         }
     };
