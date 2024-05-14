@@ -33,14 +33,21 @@ pub fn Home() -> impl IntoView {
     // } else {
     //     view! {
     //     <span class="text-base text-slate-700 dark:text-slate-200">
-    //         <iframe class="w-[1280px] h-[720px]" id="bevy-game" src="/game/index.html" allow="fullscreen"></iframe>
+    //         <iframe class="w-[1280px] h-[720px]" id="yogurt-game" src="/yogurt/index.html" allow="fullscreen"></iframe>
     //     </span>
     //     }
     //  };
-    let bevy_iframe = move || {
+    let yogurt_iframe = move || {
         view! {
             <span class="text-base text-slate-700 dark:text-slate-200">
-                <iframe class="w-[480px] h-[360px]" id="bevy-game" src="/game/index.html" allow="fullscreen"></iframe>
+                <iframe class="w-[480px] h-[360px]" id="yogurt-game" src="/yogurt/index.html" allow="fullscreen"></iframe>
+                </span>
+        }
+    };
+    let marble_iframe = move || {
+        view! {
+            <span class="text-base text-slate-700 dark:text-slate-200">
+                <iframe class="w-[480px] h-[360px]" id="marble-game" src="/marble/index.html" allow="fullscreen"></iframe>
                 </span>
         }
     };
@@ -63,7 +70,14 @@ pub fn Home() -> impl IntoView {
             }
         }>
             <main class="relative flex min-h-screen flex-col items-center justify-start p-4">
-                {bevy_iframe}
+                <h2 class="text-lg font-bold tracking-tight dark:text-slate-200 sm:text-xl">Yogurt Placeholder</h2>
+                <div class="mb-2">
+                {yogurt_iframe}
+                </div>
+                <h2 class="text-lg font-bold tracking-tight dark:text-slate-200 sm:text-xl">Marble</h2>
+                <div>
+                {marble_iframe}
+                </div>
             </main>
         </ErrorBoundary>
     }
