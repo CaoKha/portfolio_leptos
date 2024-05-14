@@ -1,4 +1,4 @@
-use crate::composables::get_ua;
+// use crate::composables::get_ua;
 use leptos::*;
 
 /// Default Home Page
