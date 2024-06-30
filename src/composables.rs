@@ -26,9 +26,9 @@ pub const EXPERIENCES: [Experience; 4] = [
       job: "Software Engineer",
       company_name: "Allianz Trade",
       link: "https://www.allianz-trade.fr/",
-      content: "Automating data analysis processes for numerous legacy C/C++ projects. \
-            Creating automation scripts and a CLI tool. Converting legacy PLM documents into Git history for improved tracking systems.",
-      tech_stack: &["Rust", "Python", "C", "C++", "Batch File", "Polars", "Makefile", "Cmake"]
+      content: "Automating data analysis processes for numerous legacy projects. \
+            Creating automation scripts and a CLI tool. Converting legacy PLM documents into Git history. Developing REST API and pipeline for data analysis.",
+      tech_stack: &["Rust", "Python", "C", "Batch File", "Polars", "Makefile", ]
     },
     Experience {
       date: "Sep 2021 — Sep 2023",
