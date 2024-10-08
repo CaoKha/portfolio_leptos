@@ -1,6 +1,3 @@
-// use leptos_use::use_window;
-// use woothee::parser::{Parser, WootheeResult};
-
 pub struct Experience<'a> {
     pub date: &'a str,
     pub job: &'a str,
