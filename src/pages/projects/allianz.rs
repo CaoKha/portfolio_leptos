@@ -53,7 +53,7 @@ pub fn Allianz() -> impl IntoView {
                         </button>
 
                     </div>
-                    <div class="pt-1 lg:pt-0 block m-auto">
+                    <div class="pt-5 lg:pt-0 block m-auto">
                         <img src="/images/legacy_git.png" class="aspect-auto"/>
                     </div>
 

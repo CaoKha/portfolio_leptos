@@ -18,7 +18,7 @@ pub fn Allianz2() -> impl IntoView {
                     <br/>
                     <img src="/images/polarsvsspark.png" class="m-auto lg:w-1/3"/>
                     <p class="text-center dark:text-slate-400 sm:text-xl pt-4 lg:pt-10">
-                        "This project involves rewriting an existing ETL pipeline from PySpark to Rust using Polars. 
+                        "This project involves rewriting an existing ETL pipeline from PySpark to Rust using Polars.
                         The goal is to improve performance and reduce memory usage by transitioning from Spark's multiprocessing 
                         to Rust's multithreading. This shift allows us to move from a multi-server architecture to a single-server model, 
                         significantly reducing operational costs. If the single-server approach doesn't meet our needs, 
@@ -63,11 +63,11 @@ pub fn Allianz2() -> impl IntoView {
                         </button>
 
                     </div>
-                    <div class="pt-1 lg:pt-0 block m-auto">
+                    <div class="pt-5 lg:pt-0 block m-auto">
                         <img src="/images/etl.png" class="aspect-auto"/>
+                        <br/>
                         <img src="/images/rust_etl.jpeg" class="aspect-auto"/>
                     </div>
-
                 </div>
 
             </section>
