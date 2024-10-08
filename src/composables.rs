@@ -58,7 +58,7 @@ pub const EXPERIENCES: [Experience; 4] = [
     }
   ];
 
-pub const PROJECTS: [Project; 5] = [
+pub const PROJECTS: [Project; 6] = [
     Project {
         title: "Finite State Machine Mobile Robot",
         link: "/Projects/SumoRobot",
@@ -95,10 +95,18 @@ pub const PROJECTS: [Project; 5] = [
     },
     Project {
         title: "Rewrite ETL pipeline from Python to Rust",
-        link: "/Projects/Allianz2",
+        link: "/Projects/Etl",
         description:
             "This work is an attempt to benchmark Rust performance against existing Python code base.",
         img_src: "/images/polarsvsspark.png",
         tech_stack: &["Rust", "Python", "Polars", "Kafka", "Makefile", "Docker Compose"],
+    },
+    Project {
+        title: "E2E Encryption",
+        link: "/Projects/E2ee",
+        description:
+            "An attempt to make a CLI for E2E encryption.",
+        img_src: "/images/lock.jpeg",
+        tech_stack: &["Rust", "SDK", "CLI", "Cargo", "Makefile"],
     }
 ];

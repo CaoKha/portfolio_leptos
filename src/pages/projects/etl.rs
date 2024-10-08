@@ -1,7 +1,7 @@
 use leptos::*;
 
 #[component]
-pub fn Allianz2() -> impl IntoView {
+pub fn Etl() -> impl IntoView {
     view! {
         <main class="min-h-screen py-10">
             <section>
