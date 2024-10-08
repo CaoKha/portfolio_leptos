@@ -3,6 +3,7 @@ name = "portfolio_leptos"
 version = "0.1.0"
 edition = "2021"
 authors = ["Kha <nguyencaokha131995@gmail.com>"]
+resolver = "2"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

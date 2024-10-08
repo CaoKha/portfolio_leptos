@@ -107,10 +107,10 @@ pub fn Portfolio() -> impl IntoView {
                             <p class="mb-2">
                                 "Hi, I studied mechatronics at Univeristy of Technologies of Compiegne (UTC) in France and I'm
                                 working
-                                on a graphical project."
+                                on a graphical project. Try clicking on the dino on top left if you would like to see my experiment ;) "
                             </p>
                             <p>
-                                "When I’m not at the computer, I’m usually hanging out with my friend, playing card game, watching movies or
+                                "When I’m not at the computer, I’m usually hanging out with my friend, playing badminton/tennis, watching movies or
                                 running around Paris searching for stuffs"
                             </p>
                         </div>
