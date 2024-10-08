@@ -105,9 +105,8 @@ pub fn Portfolio() -> impl IntoView {
                         </div>
                         <div class="text-base text-slate-700 dark:text-slate-200">
                             <p class="mb-2">
-                                "Hi, I studied mechatronics at Univeristy of Technologies of Compiegne (UTC) in France and I'm
-                                working
-                                on a graphical project. Try clicking on the dino on top left if you would like to see my experiment ;) "
+                                "Hi, I studied mechatronics at Univeristy of Technologies of Compiegne (UTC) in France and I'm working
+                                on a graphical project. Try clicking on the dino on the top left corner if you would like to see my experiment! ;)"
                             </p>
                             <p>
                                 "When I’m not at the computer, I’m usually hanging out with my friend, playing badminton/tennis, watching movies or
