@@ -27,13 +27,25 @@ pub fn Allianz() -> impl IntoView {
                 <div class="mx-5 grid pt-10 lg:mx-10 lg:grid-cols-2 lg:gap-4 lg:pt-52">
                     <div>
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            "1: From Excel to Apache parquet to .git repo"
+                            "1: Converting Excel file into Apache parquet using polars-rs"
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            "LazyFrame, .parquet, .git"
+                            "Implement a Rust function to read data from an Excel file and write it into an Apache Parquet 
+                            format using the Polars library. This process will enhance performance by converting the tabular data 
+                            from a row-based format (Excel) into a columnar format (Parquet) for optimized storage and querying."
                         </p>
                         <br/>
 
+                        <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
+                            "2: Link rows and recreate Git history from parquet file using polars-rs and git2"
+                        </h1>
+                        <p class="pt-5 dark:text-slate-400 sm:text-xl">
+                            "Using the parquet file generated in the previous step, implement a function that links 
+                            rows together and recreates a Git-like history for each row. Each row should be treated as a commit, 
+                            with relationships (e.g., parent-child) established between rows based on specified criteria 
+                            (such as IDs, timestamps, or other unique identifiers)."
+                        </p>
+                        <br/>
                         <button class="rounded-full bg-slate-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
                             <a href="https://github.com/CaoKha/rewrite_git_history" target="_blank">
                                 <span>Demo Code</span>

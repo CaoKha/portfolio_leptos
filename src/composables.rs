@@ -61,7 +61,7 @@ pub const EXPERIENCES: [Experience; 4] = [
     }
   ];
 
-pub const PROJECTS: [Project; 4] = [
+pub const PROJECTS: [Project; 5] = [
     Project {
         title: "Finite State Machine Mobile Robot",
         link: "/Projects/SumoRobot",
@@ -92,25 +92,16 @@ pub const PROJECTS: [Project; 4] = [
         title: "Rewrite git history",
         link: "/Projects/Allianz",
         description:
-            "Another day, another legacy project...",
-        img_src: "/images/crab.png",
+            "Migrating version control from Excel to Git",
+        img_src: "/images/legacy_git.png",
         tech_stack: &["Rust", "Python", "C", "C++", "Batch File", "Polars", "Makefile", "Cmake"],
     },
+    Project {
+        title: "Rewrite ETL pipeline from Python to Rust",
+        link: "/Projects/Allianz2",
+        description:
+            "This work is an attempt to benchmark Rust performance against existing Python code base.",
+        img_src: "/images/polarsvsspark.png",
+        tech_stack: &["Rust", "Python", "Polars", "Kafka", "Makefile", "Docker Compose"],
+    }
 ];
-
-// pub fn get_ua<'a>() -> Option<WootheeResult<'a>> {
-//     let parser = Parser::new();
-//     match use_window()
-//         .navigator()
-//         .and_then(|nav| nav.user_agent().ok())
-//     {
-//         Some(ua_str) => {
-//             let ua_str_heap_ref: &'a str = Box::leak(ua_str.into_boxed_str());
-//             // ua_str is a local variable to the closure,
-//             // in order to pass in a reference we need to allocate a new string
-//             // on the heap and take a reference to it
-//             parser.parse(ua_str_heap_ref)
-//         }
-//         None => None,
-//     }
-// }

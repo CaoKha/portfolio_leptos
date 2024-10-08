@@ -5,6 +5,7 @@ pub mod sumo_robot;
 pub mod trimble;
 pub mod fff;
 pub mod allianz;
+pub mod allianz2;
 
 #[component]
 pub fn Projects() -> impl IntoView {

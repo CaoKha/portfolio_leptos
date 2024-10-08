@@ -132,7 +132,7 @@ pub fn Portfolio() -> impl IntoView {
                             <div class="mt-12">
                                 <a
                                     class="group inline-flex items-center font-semibold leading-tight text-slate-500 dark:text-slate-200"
-                                    aria-label="View Full Résumé"
+                                    aria-label="View Full CV"
                                     href="/pdf/resume.pdf"
                                     target="_blank"
                                 >
@@ -143,7 +143,7 @@ pub fn Portfolio() -> impl IntoView {
                                         </span>
                                         <span class="whitespace-nowrap">
                                             <span class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
-                                                Résumé
+                                                CV
                                             </span>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
