@@ -70,7 +70,7 @@ pub fn NavBar() -> impl IntoView {
                                 >
                                     <a
                                         class="block hover:text-slate-700 dark:text-slate-200 dark:hover:text-slate-400"
-                                        href="https://www.linkedin.com/in/cao-kha-nguyen-11327a239/"
+                                        href="https://www.linkedin.com/in/cao-kha-n-11327a239/"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
