@@ -1,5 +1,7 @@
 use leptos::*;
 
+use crate::composables::site_path;
+
 #[component]
 pub fn E2ee() -> impl IntoView {
     view! {
@@ -16,7 +18,7 @@ pub fn E2ee() -> impl IntoView {
 
                     <p class="text-center font-medium dark:text-slate-200">Done in 2 days</p>
                     <br/>
-                    <img src="/images/lock.jpeg" class="m-auto lg:w-1/3"/>
+                    <img src=site_path("/images/lock.jpeg") class="m-auto lg:w-1/3"/>
                     <p class="text-center dark:text-slate-400 sm:text-xl pt-4 lg:pt-10">
                         "This project involves writing an simple E2E encryption CLI in Rust using rsa crate.
                         The goal is to make it and ship it as soon as possible. The CLI supports Linux, MacOS, and Windows."

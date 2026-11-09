@@ -1,12 +1,14 @@
-use leptos::*;
 use crate::components::project_card::ProjectCard;
 use crate::composables::PROJECTS;
+use leptos::*;
+pub mod allianz;
+pub mod dlc;
+pub mod e2ee;
+pub mod etl;
+pub mod fff;
+pub mod ln_markets;
 pub mod sumo_robot;
 pub mod trimble;
-pub mod fff;
-pub mod allianz;
-pub mod etl;
-pub mod e2ee;
 
 #[component]
 pub fn Projects() -> impl IntoView {

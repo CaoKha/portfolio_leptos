@@ -4,7 +4,7 @@ use leptos_router::A;
 use leptos_use::use_element_visibility;
 
 use crate::components::{experience_card::ExperienceCard, project_card::ProjectCard};
-use crate::composables::{EXPERIENCES, HEADERS, PROJECTS};
+use crate::composables::{site_path, EXPERIENCES, HEADERS, PROJECTS, SKILL_GROUPS};
 
 #[component]
 pub fn Portfolio() -> impl IntoView {
@@ -14,7 +14,11 @@ pub fn Portfolio() -> impl IntoView {
     let is_about_visible = use_element_visibility(target_about);
     let is_exp_visible = use_element_visibility(target_exp);
     let is_proj_visible = use_element_visibility(target_proj);
-    let current_visible = move || match [is_about_visible(), is_exp_visible(), is_proj_visible()] {
+    let current_visible = move || match [
+        is_about_visible.get(),
+        is_exp_visible.get(),
+        is_proj_visible.get(),
+    ] {
         [true, false, false] => "About",
         [true, true, false] => "About",
         [false, true, false] => "Experiences",
@@ -27,7 +31,7 @@ pub fn Portfolio() -> impl IntoView {
         HEADERS.map(|header| {
         view! {
             <span class=("active", move || current_visible() == header)>
-                <A class="group flex items-center py-3" href=format!("#{}", header)>
+                <A class="group flex items-center py-3" href=format!("{}#{}", site_path("/"), header)>
                     <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all active:bg-slate-700 group-hover:w-16 group-hover:bg-slate-700 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none dark:group-hover:bg-slate-200"></span>
                     <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-700 group-focus-visible:text-slate-200 dark:group-hover:text-slate-200">
                         {header}
@@ -48,6 +52,7 @@ pub fn Portfolio() -> impl IntoView {
                         company=experience.company_name
                         link=experience.link
                         content=experience.content
+                        highlights=experience.highlights
                         tech_stack=experience.tech_stack
                     />
                 </li>
@@ -80,9 +85,24 @@ pub fn Portfolio() -> impl IntoView {
                             Kha Nguyen
                         </h1>
                         <h2 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-xl">
-                            Software Engineer
+                            "Rust Engineer · Paris, France"
                         </h2>
-                        <p class="mt-4 max-w-xs leading-normal text-slate-400"></p>
+                        <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-400">
+                            <a class="hover:text-slate-900 dark:hover:text-slate-200" href="mailto:nguyencaokha131995@gmail.com">
+                                "Email"
+                            </a>
+                            <a class="hover:text-slate-900 dark:hover:text-slate-200" href="tel:+33671052962">
+                                "+33 6 71 05 29 62"
+                            </a>
+                            <a
+                                class="hover:text-slate-900 dark:hover:text-slate-200"
+                                href="https://github.com/CaoKha"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                "GitHub"
+                            </a>
+                        </div>
                         <nav class="nav hidden lg:block" aria-label="In-page jump links">
                             <ul class="mt-16 w-max">
                                 <li>{header_list}</li>
@@ -104,17 +124,35 @@ pub fn Portfolio() -> impl IntoView {
                             </h2>
                         </div>
                         <div class="text-base text-slate-700 dark:text-slate-200">
-                            <p class="mb-2">
-                                "Hi, I studied mechatronics at Univeristy of Technologies of Compiegne (UTC) in France and I'm working
-                                on a graphical project."
+                            <p class="mb-3">
+                                "Rust engineer with 3+ years of production Rust, now building backend and full-stack features in TypeScript and Rust."
                             </p>
-                            <p class="mb-2">
-                                "Try clicking on the dino on the top left corner if you would like to see my experiment! ;)"
+                            <p class="mb-3">
+                                "I built the oracle engine and the DLC contract lifecycle — adaptor signatures, PSBT, Taproot/Schnorr, wallet and transaction building — and tested it against Bitcoin Core in regtest and signet. Since January 2026, I have been working on the LN Markets derivatives platform."
                             </p>
                             <p>
-                                "When I’m not at the computer, I’m usually hanging out with my friend, playing badminton/tennis, watching movies or
-                                running around Paris searching for stuffs"
+                                "MEng Mechatronics (UTC, Compiègne) and MSc Computer Science (Loughborough University). Based in Paris."
                             </p>
+                            <div class="mt-8">
+                                <h3 class="text-sm font-bold uppercase tracking-widest text-slate-700 dark:text-slate-200">
+                                    "Technical skills"
+                                </h3>
+                                <dl class="mt-3 space-y-2">
+                                    {SKILL_GROUPS
+                                        .map(|group| {
+                                            view! {
+                                                <div class="flex flex-col gap-1 border-b border-slate-200/60 pb-2 last:border-0 dark:border-slate-700/60 sm:flex-row sm:gap-4">
+                                                    <dt class="shrink-0 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:w-44 sm:pt-0.5">
+                                                        {group.label}
+                                                    </dt>
+                                                    <dd class="text-sm leading-normal text-slate-700 dark:text-slate-300">
+                                                        {group.skills.join(", ")}
+                                                    </dd>
+                                                </div>
+                                            }
+                                        })}
+                                </dl>
+                            </div>
                         </div>
                     </section>
 
@@ -135,7 +173,7 @@ pub fn Portfolio() -> impl IntoView {
                                 <a
                                     class="group inline-flex items-center font-semibold leading-tight text-slate-500 dark:text-slate-200"
                                     aria-label="View Full CV"
-                                    href="/pdf/resume.pdf"
+                                    href=site_path("/pdf/CV_KhaNguyen.pdf")
                                     target="_blank"
                                 >
                                     <span>

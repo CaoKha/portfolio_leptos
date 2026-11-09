@@ -1,6 +1,8 @@
 use leptos::*;
 use leptos_router::A;
 
+use crate::composables::site_path;
+
 #[component]
 pub fn ProjectCard(
     #[prop()] title: &'static str,
@@ -24,11 +26,11 @@ pub fn ProjectCard(
     view! {
         <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
             <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-blue-500/10 dark:lg:group-hover:bg-slate-800/50 dark:lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] dark:lg:group-hover:drop-shadow-lg"></div>
-            <div class="z-10 sm:order-2 sm:col-span-6">
+            <div class=if img_src.is_empty() { "z-10 sm:order-2 sm:col-span-8" } else { "z-10 sm:order-2 sm:col-span-6" }>
                 <h3>
                     <A
                         class="group/link inline-flex items-baseline text-lg font-medium leading-tight text-violet-900 focus-visible:text-teal-300 dark:text-slate-200 dark:hover:text-teal-300"
-                        href=link
+                        href=site_path(link)
                     >
                         <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                         <span>
@@ -57,16 +59,20 @@ pub fn ProjectCard(
                     {tech_list}
                 </ul>
             </div>
-            <img
-                alt=""
-                loading="lazy"
-                decoding="async"
-                data-nimg="1"
-                class="w-64 h-48 object-cover mt-4 aspect-auto rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:mt-0 sm:translate-y-1"
-                style="color:transparent"
-                src=img_src
-            />
+            {(!img_src.is_empty())
+                .then(|| {
+                    view! {
+                        <img
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                            data-nimg="1"
+                            class="w-64 h-48 object-cover mt-4 aspect-auto rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:mt-0 sm:translate-y-1"
+                            style="color:transparent"
+                            src=site_path(img_src)
+                        />
+                    }
+                })}
         </div>
     }
 }
-

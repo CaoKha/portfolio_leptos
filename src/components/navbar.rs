@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::*;
 
 use crate::components::theme_btn::ThemeButton;
-use crate::composables::NAV_ITEMS;
+use crate::composables::{site_path, NAV_ITEMS};
 
 #[component]
 pub fn NavBar() -> impl IntoView {
@@ -10,7 +10,7 @@ pub fn NavBar() -> impl IntoView {
         NAV_ITEMS.map(|item| {
         view! {
             <A
-                href=format!("/{}", item)
+                href=site_path(&format!("/{}", item))
                 class="mr-4 mt-0 inline-block text-right text-slate-500 no-underline hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
             >
                 {item}
@@ -22,9 +22,9 @@ pub fn NavBar() -> impl IntoView {
         <div class="border-b-2 border-b-slate-100 bg-blue-500/10 font-sans antialiased dark:bg-gray-800/90">
             <nav class="flex flex-wrap items-center justify-between p-2">
                 <div class="flex-no-shrink ml-0 sm:ml-4 mr-4 sm:mr-6 mt-1 flex items-center text-white">
-                    <A href="">
+                    <A href=site_path("/")>
                         <img
-                            src="/images/avatar.jpeg"
+                            src=site_path("/images/avatar.jpeg")
                             alt="ava"
                             class="aspect-auto w-10 rounded-full ring-1 ring-gray-900/5"
                         />

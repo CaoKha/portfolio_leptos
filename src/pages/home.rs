@@ -1,20 +1,22 @@
 // use crate::composables::get_ua;
 use leptos::*;
 
+use crate::composables::site_path;
+
 /// Default Home Page
 #[component]
 pub fn Home() -> impl IntoView {
     let yogurt_iframe = move || {
         view! {
             <span class="text-base text-slate-700 dark:text-slate-200">
-                <iframe class="w-[480px] h-[360px]" id="yogurt-game" src="/yogurt/index.html" allow="fullscreen"></iframe>
+                <iframe class="w-[480px] h-[360px]" id="yogurt-game" src=site_path("/yogurt/index.html") allow="fullscreen"></iframe>
                 </span>
         }
     };
     let marble_iframe = move || {
         view! {
             <span class="text-base text-slate-700 dark:text-slate-200">
-                <iframe class="w-[480px] h-[360px]" id="marble-game" src="/marble/index.html" allow="fullscreen"></iframe>
+                <iframe class="w-[480px] h-[360px]" id="marble-game" src=site_path("/marble/index.html") allow="fullscreen"></iframe>
                 </span>
         }
     };

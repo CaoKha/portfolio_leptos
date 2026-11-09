@@ -7,6 +7,7 @@ pub fn ExperienceCard(
     #[prop()] company: &'static str,
     #[prop()] link: &'static str,
     #[prop()] content: &'static str,
+    #[prop()] highlights: &'static [&'static str],
     #[prop()] tech_stack: &'static [&'static str],
 ) -> impl IntoView {
     let tech_list = || {
@@ -37,11 +38,11 @@ pub fn ExperienceCard(
                             href=link
                             target="_blank"
                             rel="noreferrer"
-                            aria-label=format!("{} at {}`", job, company)
+                            aria-label=format!("{} at {}", job, company)
                         >
                             <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                             <span>
-                                {job} at
+                                {format!("{} at ", job)}
                                 <span class="inline-block whitespace-nowrap">
                                     {company}
                                     <svg
@@ -65,6 +66,12 @@ pub fn ExperienceCard(
                 <p class="mt-2 text-base leading-normal text-slate-700 dark:text-slate-200">
                     {content}
                 </p>
+                <ul class="mt-3 list-disc space-y-1 pl-5 text-sm leading-normal text-slate-700 dark:text-slate-300">
+                    {highlights
+                        .iter()
+                        .map(|highlight| view! { <li>{*highlight}</li> })
+                        .collect_view()}
+                </ul>
                 <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                     {tech_list}
                 </ul>

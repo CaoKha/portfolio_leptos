@@ -11,11 +11,10 @@ pub fn SumoRobot() -> impl IntoView {
                     </h1>
 
                     <h2 class="mt-3 text-center text-lg font-medium tracking-tight dark:text-slate-200 sm:text-xl">
-                        University of
-                        technology of Compiegne, France
+                        "University of Technology of Compiègne, France"
                     </h2>
 
-                    <p class="text-center font-medium dark:text-slate-200 ">10/2019</p>
+                    <p class="text-center font-medium dark:text-slate-200 ">Oct 2019</p>
                     <br/>
                     <video controls muted>
                         <source src="https://video.wixstatic.com/video/ee9a71_11ab2e62fc6f4737a08cdf7317ce9403/720p/mp4/file.mp4"/>

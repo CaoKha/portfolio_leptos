@@ -1,5 +1,7 @@
 use leptos::*;
 
+use crate::composables::site_path;
+
 #[component]
 pub fn FFF() -> impl IntoView {
     view! {
@@ -7,18 +9,18 @@ pub fn FFF() -> impl IntoView {
             <section>
                 <div class="mx-5 lg:m-auto lg:w-2/3">
                     <h1 class="text-center text-4xl font-bold tracking-tight dark:text-slate-200 sm:text-5xl">
-                        Football Applications
+                        "French Football Federation applications"
                     </h1>
 
                     <h2 class="mt-3 text-center text-lg font-medium tracking-tight dark:text-slate-200 sm:text-xl">
-                        France Footbal Federation, Paris, France
+                        French Football Federation, Paris, France
                     </h2>
 
-                    <p class="text-center font-medium dark:text-slate-200 ">2021 - 2023</p>
+                    <p class="text-center font-medium dark:text-slate-200 ">"Sep 2021 – Sep 2023"</p>
                     <br/>
                     // <img src="/images/portailbleu.png" class="m-auto lg:w-1/3"/>
                     <p class="text-center dark:text-slate-400 sm:text-xl pt-4 lg:pt-10">
-                        "This is just a list of all the projects I have done at FFF. Most of them are NDAs, hence I can't show code."
+                        "Club management application, online membership payment, and a user dashboard shared by several internal applications. Most of the work is under NDA, so the code is not public."
                     </p>
                 </div>
             </section>
@@ -34,7 +36,7 @@ pub fn FFF() -> impl IntoView {
 
                     </div>
                     <div class="pt-1 lg:pt-0 block m-auto">
-                        <img src="/images/portailbleu.png" class="aspect-auto"/>
+                        <img src=site_path("/images/portailbleu.png") class="aspect-auto"/>
                     </div>
                 </div>
 
@@ -49,7 +51,7 @@ pub fn FFF() -> impl IntoView {
                         <br/>
                     </div>
                     <div class="pt-5 block m-auto lg:pt-0">
-                        <img src="/images/lcf.png" class="aspect-auto"/>
+                        <img src=site_path("/images/lcf.png") class="aspect-auto"/>
                     </div>
 
                 </div>
@@ -63,7 +65,7 @@ pub fn FFF() -> impl IntoView {
                         <br/>
                     </div>
                     <div class="pt-5 lg:pt-0 block m-auto">
-                        <img src="/images/cotis.png" class="aspect-auto"/>
+                        <img src=site_path("/images/cotis.png") class="aspect-auto"/>
                     </div>
                 </div>
 
@@ -78,7 +80,7 @@ pub fn FFF() -> impl IntoView {
                         <br/>
                     </div>
                     <div class="pt-5 lg:pt-0">
-                        <img src="/images/vdc.png" class="aspect-auto"/>
+                        <img src=site_path("/images/vdc.png") class="aspect-auto"/>
                     </div>
                 </div>
             </section>

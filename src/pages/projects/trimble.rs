@@ -1,5 +1,7 @@
 use leptos::*;
 
+use crate::composables::site_path;
+
 #[component]
 pub fn Trimble() -> impl IntoView {
     view! {
@@ -14,19 +16,20 @@ pub fn Trimble() -> impl IntoView {
                         Trimble SAS, Nantes, France
                     </h2>
 
-                    <p class="text-center font-medium dark:text-slate-200 ">6/2019</p>
+                    <p class="text-center font-medium dark:text-slate-200 ">"Feb 2019 – Aug 2019"</p>
                     <br/>
-                    <img src="/images/trimble_robot.png" class="m-auto lg:w-1/3"/>
+                    <img src=site_path("/images/trimble_robot.png") class="m-auto lg:w-1/3"/>
                     <p class="text-center dark:text-slate-400 sm:text-xl pt-4 lg:pt-10">
-                        Revan is a camera-vision-based project intended for implementation on a forklift. 
-                        The project aims to achieve localization with an error margin of less than 10 cm in both indoor and 
-                        outdoor environments. To meet this goal, a robot has been constructed utilizing a combination of sensors 
-                        including a camera, an IMU, a LiDAR, and wheel encoders. These sensors are then integrated to improve the accuracy 
+                        Revan is a camera-vision-based project intended for implementation on a forklift.
+                        The project aims to achieve localization with an error margin of less than 10 cm in both indoor and
+                        outdoor environments. To meet this goal, a robot has been constructed utilizing a combination of sensors
+                        including a camera, an IMU, a LiDAR, and wheel encoders. These sensors are then integrated to improve the accuracy
                         of the localization results.
-                        My role in this project involves sensor hardware synchronization, which entails synchronizing 
-                        the data received from the camera (D435) and the data received from the IMU (DMU11). 
-                        This synchronization process ensures that the data from both sensors are aligned, thereby reducing errors 
-                        in the sensor fusion method.
+                        My role in this project involves sensor hardware synchronization, which entails synchronizing
+                        the data received from the camera (D435) and the data received from the IMU (DMU11).
+                        This synchronization process ensures that the data from both sensors are aligned, thereby reducing errors
+                        in the sensor fusion method. I interpolated the RealSense D345 camera and DMU11 IMU data with SLERP
+                        and published the fused stream as a ROS topic.
                     </p>
                 </div>
             </section>
@@ -37,35 +40,35 @@ pub fn Trimble() -> impl IntoView {
                             1: Synchronize the camera and IMU by aligning the pulses from the IMU with those of the camera
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            To measure the signal from the IMU, 
+                            To measure the signal from the IMU,
                             I utilized an oscilloscope to capture the output from the SYNC pin (pin 8) of the IMU
                         </p>
                         <br/>
                     </div>
                     <div class="pt-1 lg:pt-0 block m-auto">
-                        <img src="/images/trimble_imu_cam.png" class="aspect-auto"/>
+                        <img src=site_path("/images/trimble_imu_cam.png") class="aspect-auto"/>
                     </div>
                     <div>
 
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            The signal obtained from pin 8 was not the expected 200 Hz output data rate (ODR) signal, 
-                            but rather a 1000 Hz pulse signal. The pulse signal had a width of 0.19 ms. 
+                            The signal obtained from pin 8 was not the expected 200 Hz output data rate (ODR) signal,
+                            but rather a 1000 Hz pulse signal. The pulse signal had a width of 0.19 ms.
                             This discrepancy was not unexpected, as it was clearly stated in the datasheet.
                         </p>
                     </div>
                     <div class="pt-5 lg:pt-0 block m-auto">
-                        <img src="/images/pin_info.png" class="aspect-auto"/>
+                        <img src=site_path("/images/pin_info.png") class="aspect-auto"/>
                     </div>
                     <div>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            The 1000 Hz pulses indicate that the raw data is available inside the DMU11 chip. 
-                            This raw data is subsequently filtered and transmitted to the computer via a USB port at a rate 
-                            of 200 Hz. However, since 1000 is not divisible by the frame rates of the camera (15, 30, 60, or 90), 
+                            The 1000 Hz pulses indicate that the raw data is available inside the DMU11 chip.
+                            This raw data is subsequently filtered and transmitted to the computer via a USB port at a rate
+                            of 200 Hz. However, since 1000 is not divisible by the frame rates of the camera (15, 30, 60, or 90),
                             which all contain a factor of 3, hardware synchronization between these signals cannot be achieved.
                         </p>
                     </div>
                     <div class="pt-5 lg:pt-0 block m-auto">
-                        <img src="/images/imu_info.png" class="aspect-auto"/>
+                        <img src=site_path("/images/imu_info.png") class="aspect-auto"/>
                     </div>
 
                 </div>
@@ -76,7 +79,7 @@ pub fn Trimble() -> impl IntoView {
                             2: Phase locked loop
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            "Initially, we assumed that sending an electrical pulse to the camera would prompt it to capture an image. 
+                            "Initially, we assumed that sending an electrical pulse to the camera would prompt it to capture an image.
                             However, the reality is more complex. A camera doesn't function as a simple trigger-shoot device; 
                             instead, it's designed to maintain its frame rate at specific frequencies. That's why the datasheet 
                             recommends sending pulses to pin 8 at the exact frequency at which the camera is running.
@@ -89,7 +92,7 @@ pub fn Trimble() -> impl IntoView {
                         <br/>
                     </div>
                     <div class="pt-5 block m-auto lg:pt-0">
-                        <img src="/images/phase_locked_loop.png" class="aspect-auto"/>
+                        <img src=site_path("/images/phase_locked_loop.png") class="aspect-auto"/>
                     </div>
 
                     <div>
@@ -107,7 +110,7 @@ pub fn Trimble() -> impl IntoView {
                         </p>
                     </div>
                     <div class="pt-5 lg:pt-0 block m-auto">
-                        <img src="/images/syncing.png" class="aspect-auto"/>
+                        <img src=site_path("/images/syncing.png") class="aspect-auto"/>
                     </div>
                 </div>
 
@@ -117,7 +120,7 @@ pub fn Trimble() -> impl IntoView {
                             3: GNSS
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            "To validate my assertion, I utilized a GNSS device as my clock to timestamp the pulses received 
+                            "To validate my assertion, I utilized a GNSS device as my clock to timestamp the pulses received
                             from the camera. Additionally, I developed a testing code in C++ that timestamped images each time 
                             they were received from the camera, using a timing library. Upon observation, I detected inconsistencies 
                             between the timestamps in milliseconds obtained from the GNSS and those from the C++ library.
@@ -134,7 +137,7 @@ pub fn Trimble() -> impl IntoView {
                         <br/>
                     </div>
                     <div class="pt-5 lg:pt-0 block m-auto">
-                        <img src="/images/gnss.png" class="aspect-auto"/>
+                        <img src=site_path("/images/gnss.png") class="aspect-auto"/>
                     </div>
                 </div>
 
@@ -144,7 +147,7 @@ pub fn Trimble() -> impl IntoView {
                             4: Interpolation
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            "To obtain data from both the camera and IMU simultaneously without synchronization, 
+                            "To obtain data from both the camera and IMU simultaneously without synchronization,
                             interpolation appeared to be a potential solution worth considering. However, implementing and 
                             ensuring real-time functionality with this method posed a challenge.
                             Interpolation involves generating new data points within the range of a discrete set of known data points. 
@@ -159,7 +162,7 @@ pub fn Trimble() -> impl IntoView {
                         <br/>
                     </div>
                     <div class="pt-5 lg:pt-0">
-                        <img src="/images/interpolation.png" class="aspect-auto"/>
+                        <img src=site_path("/images/interpolation.png") class="aspect-auto"/>
                     </div>
                 </div>
                 <div class="mx-5 pt-10 lg:mx-10">
@@ -175,7 +178,7 @@ pub fn Trimble() -> impl IntoView {
                             <li>"• Create new IMU data at the time the image was received."</li>
                             <li>"• Repeat this process until the program concludes."</li>
                         </ul>
-                        "Although initially challenging due to the different update rates of the BNO055 IMU (100 Hz) and the Realsense D435 camera set at 30 Hz, 
+                        "Although initially challenging due to the different update rates of the BNO055 IMU (100 Hz) and the Realsense D435 camera set at 30 Hz,
                         successful implementation was achieved. Despite initial data chaos upon sending to ROS, adjusting the method 
                         of data publication resolved the disorder, ensuring correct data order."
                     </p>
@@ -186,7 +189,7 @@ pub fn Trimble() -> impl IntoView {
                             5: Conclusion
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            "Calibration and synchronization are two crucial techniques in sensor applications. 
+                            "Calibration and synchronization are two crucial techniques in sensor applications.
                             The aim of this project is to synchronize the camera and IMU sensors. Initially, it was believed that 
                             using electrical pulses from the IMU to trigger the camera would solve the issue. However, experiments 
                             revealed that the camera's operation did not support this method. To address this, a pulse generator was 
