@@ -26,7 +26,8 @@ and prefixes its own links and assets.
 
 Pushes to `master` run `.github/workflows/deploy.yml` and publish `dist/` to GitHub Pages.
 
-One-time repository setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+The workflow calls `actions/configure-pages` with `enablement: true`, so it creates and enables
+the Pages site (source: GitHub Actions) on the first run. No manual repository setup is required.
 
 GitHub Pages has no SPA rewrite rule, so the workflow copies `index.html` to `404.html`; deep
 links such as `/Projects/DlcMarkets` boot the router client-side.
