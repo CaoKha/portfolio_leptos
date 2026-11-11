@@ -1,11 +1,14 @@
 use leptos::*;
 
-const STACK: [&str; 11] = [
+const STACK: [&str; 14] = [
     "TypeScript",
     "Rust",
     "Python",
     "React",
     "oRPC",
+    "Fumadocs",
+    "Eclair",
+    "Lightning Network",
     "Tailwind CSS",
     "Vite",
     "Vitest",
@@ -31,7 +34,7 @@ pub fn LnMarkets() -> impl IntoView {
                     <p class="text-center font-medium dark:text-slate-200">"Jan 2026 – Present"</p>
 
                     <p class="pt-4 text-center dark:text-slate-400 sm:text-xl lg:pt-10">
-                        "Backend and full-stack features on the Bitcoin derivatives trading platform, from type-safe API contracts to the qAssets referral programme."
+                        "Backend and full-stack features on the Bitcoin derivatives trading platform, from the trollbox and the documentation site to type-safe API contracts and the qAssets referral programme."
                     </p>
 
                     <ul class="mx-auto mt-6 flex max-w-3xl flex-wrap justify-center" aria-label="Technologies used">
@@ -60,7 +63,32 @@ pub fn LnMarkets() -> impl IntoView {
                         <br/>
 
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            "2: qAssets referral programme"
+                            "2: Eclair client"
+                        </h1>
+                        <p class="pt-5 dark:text-slate-400 sm:text-xl">
+                            "Built an Eclair client for ACINQ's Lightning Network implementation."
+                        </p>
+                        <br/>
+
+                        <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
+                            "3: Trollbox"
+                        </h1>
+                        <p class="pt-5 dark:text-slate-400 sm:text-xl">
+                            "Built all the trollbox functionalities: emoji reactions, mentions, replies and the censorship mechanism."
+                        </p>
+                        <br/>
+
+                        <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
+                            "4: Documentation site"
+                        </h1>
+                        <p class="pt-5 dark:text-slate-400 sm:text-xl">
+                            "Forked Fumadocs and wrote all the documentation pages on docs.lnmarkets.com."
+                        </p>
+                        <br/>
+                    </div>
+                    <div>
+                        <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
+                            "5: qAssets referral programme"
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
                             "Building the referral programme for qAssets: gold, stocks, an index and oil, margined and settled in sats."
@@ -68,15 +96,15 @@ pub fn LnMarkets() -> impl IntoView {
                         <br/>
 
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            "3: Type-safe APIs with oRPC"
+                            "6: Type-safe APIs with oRPC"
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
                             "Built the backend with oRPC: end-to-end type-safe API contracts shared by server and client, removing a separate API schema layer."
                         </p>
-                    </div>
-                    <div>
+                        <br/>
+
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            "4: React frontend"
+                            "7: React frontend"
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
                             "Built the frontend in React and TypeScript with Tailwind CSS."
@@ -84,7 +112,7 @@ pub fn LnMarkets() -> impl IntoView {
                         <br/>
 
                         <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
-                            "5: Testing and delivery"
+                            "8: Testing and delivery"
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
                             "Tested with Vitest for unit tests and Playwright for end-to-end tests, shipped with GitHub Actions and Docker."

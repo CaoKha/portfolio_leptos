@@ -99,6 +99,8 @@ pub const SKILL_GROUPS: [SkillGroup; 9] = [
             "Taproot",
             "Schnorr",
             "Bitcoin Core",
+            "Lightning Network",
+            "Eclair",
         ],
     },
     SkillGroup {
@@ -122,6 +124,7 @@ pub const SKILL_GROUPS: [SkillGroup; 9] = [
             "Nuxt",
             "Vite",
             "oRPC",
+            "Fumadocs",
             "Tailwind CSS",
             "ExpressJS",
             "RxJS",
@@ -183,6 +186,7 @@ pub const EXPERIENCES: [Experience; 5] = [
         content: "DLC Markets — protocol and engine in Rust.",
         highlights: &[
             "Refactored the oracle engine: event announcement, attestation and signing paths.",
+            "Contributed to Pythia, the open-source Rust oracle for DLC trading.",
             "Implemented the DLC contract lifecycle: offer, accept and sign message exchange, funding transaction, and Contract Execution Transactions (CETs).",
             "Settled contracts on-chain with adaptor signatures and oracle attestations, built on rust-bitcoin with secp256k1, PSBT, Taproot and Schnorr signatures.",
             "Wrote the wallet, key management and transaction-building logic, and end-to-end integration tests against Bitcoin Core in regtest and signet.",
@@ -210,6 +214,9 @@ pub const EXPERIENCES: [Experience; 5] = [
         content: "LN Markets — backend and full stack on the Bitcoin derivatives platform.",
         highlights: &[
             "Built REST APIs in TypeScript and Python; delivered the announcement banner flow and implemented trusted-device and session management.",
+            "Built the trollbox: emoji reactions, mentions, replies and the censorship mechanism.",
+            "Built an Eclair client for ACINQ's Lightning Network implementation.",
+            "Wrote all the documentation pages on docs.lnmarkets.com by forking Fumadocs.",
             "Building the referral programme for qAssets: gold, stocks, an index and oil, margined and settled in sats.",
             "Built the backend with oRPC: end-to-end type-safe API contracts shared by server and client, removing a separate API schema layer.",
             "Built the frontend in React and TypeScript with Tailwind CSS; tested with Vitest for unit tests and Playwright for end-to-end tests.",
@@ -321,8 +328,8 @@ pub const PROJECTS: [Project; 8] = [
         title: "DLC Markets — DLC protocol and engine",
         link: "/Projects/DlcMarkets",
         description:
-            "Oracle engine, DLC contract lifecycle and on-chain settlement with adaptor signatures, PSBT, Taproot and Schnorr signatures.",
-        img_src: "",
+            "Oracle engine, DLC contract lifecycle and on-chain settlement with adaptor signatures, PSBT, Taproot and Schnorr signatures, plus contributions to the open-source Pythia oracle.",
+        img_src: "/images/dlc-markets-logo.jpg",
         tech_stack: &[
             "Rust",
             "rust-bitcoin",
@@ -337,14 +344,16 @@ pub const PROJECTS: [Project; 8] = [
         title: "LN Markets — Bitcoin derivatives platform",
         link: "/Projects/LnMarkets",
         description:
-            "Backend and full-stack features with TypeScript, Rust and Python: REST APIs, sessions, qAssets referrals and type-safe oRPC contracts.",
-        img_src: "",
+            "Backend and full-stack features with TypeScript, Rust and Python: the trollbox, the Fumadocs documentation site, an Eclair client, REST APIs, sessions, qAssets referrals and type-safe oRPC contracts.",
+        img_src: "/images/ln-markets-logo.png",
         tech_stack: &[
             "TypeScript",
             "Rust",
             "Python",
             "React",
             "oRPC",
+            "Fumadocs",
+            "Eclair",
             "Tailwind CSS",
             "Vitest",
             "Playwright",

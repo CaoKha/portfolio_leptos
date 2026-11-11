@@ -91,11 +91,22 @@ pub fn DlcMarkets() -> impl IntoView {
                             "Split the codebase into a cargo workspace: one crate per domain (oracle, contract lifecycle, wallet), with the domain crates free of I/O. Optimised and refactored existing crates and kept the workspace building on Linux and macOS."
                         </p>
                         <br/>
+
+                        <h1 class="mt-3 text-lg font-medium tracking-tight dark:text-slate-200 sm:text-2xl">
+                            "6: Open source — Pythia"
+                        </h1>
+                        <p class="pt-5 dark:text-slate-400 sm:text-xl">
+                            "Contributed to Pythia, the open-source Rust oracle for DLC trading."
+                        </p>
+                        <br/>
                         <button class="rounded-full bg-slate-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
                             <a href="https://dlcmarkets.com/" target="_blank" rel="noreferrer">
                                 <span>"DLC Markets"</span>
                             </a>
                         </button>
+                        <a class="ml-2 inline-block rounded-full bg-slate-700 px-4 py-2 font-bold text-white hover:bg-blue-700" href="https://github.com/dlc-markets/pythia" target="_blank" rel="noreferrer">
+                            <span>"Pythia on GitHub"</span>
+                        </a>
                     </div>
                 </div>
             </section>
