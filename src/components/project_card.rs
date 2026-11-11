@@ -10,7 +10,9 @@ pub fn ProjectCard(
     #[prop()] description: &'static str,
     #[prop()] img_src: &'static str,
     #[prop()] tech_stack: &'static [&'static str],
+    #[prop()] external_link: (&'static str, &'static str),
 ) -> impl IntoView {
+    let (external_label, external_url) = external_link;
     let tech_list = || {
         tech_stack.iter().map(move |tech| {
             view! {
@@ -55,6 +57,21 @@ pub fn ProjectCard(
                 <p class="mt-2 text-base leading-normal text-slate-700 dark:text-slate-200">
                     {description}
                 </p>
+                {(!external_label.is_empty())
+                    .then(|| {
+                        view! {
+                            <p class="mt-2 text-base leading-normal">
+                                <a
+                                    class="font-medium text-teal-700 underline decoration-teal-400/50 underline-offset-2 hover:text-teal-600 dark:text-teal-300 dark:hover:text-teal-200"
+                                    href=external_url
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {external_label}
+                                </a>
+                            </p>
+                        }
+                    })}
                 <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                     {tech_list}
                 </ul>

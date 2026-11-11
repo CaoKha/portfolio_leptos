@@ -55,6 +55,8 @@ pub struct Project<'a> {
     pub description: &'a str,
     pub img_src: &'a str,
     pub tech_stack: &'a [&'a str],
+    /// `(label, url)` for an external link shown under the description.
+    pub external_link: (&'a str, &'a str),
 }
 
 pub struct SkillGroup<'a> {
@@ -330,6 +332,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "Oracle engine, DLC contract lifecycle and on-chain settlement with adaptor signatures, PSBT, Taproot and Schnorr signatures, plus contributions to the open-source Pythia oracle.",
         img_src: "/images/dlc-markets-logo.jpg",
+        external_link: ("", ""),
         tech_stack: &[
             "Rust",
             "rust-bitcoin",
@@ -346,6 +349,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "Backend and full-stack features with TypeScript, Rust and Python: the trollbox, the Fumadocs documentation site, an Eclair client, REST APIs, sessions, qAssets referrals and type-safe oRPC contracts.",
         img_src: "/images/ln-markets-logo.png",
+        external_link: ("docs.lnmarkets.com", "https://docs.lnmarkets.com/en/"),
         tech_stack: &[
             "TypeScript",
             "Rust",
@@ -365,6 +369,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "Excel to Parquet with Polars, profiling with Grafana Pyroscope, and Rust CLI tools that removed manual steps for the data science team.",
         img_src: "/images/polarsvsspark.png",
+        external_link: ("", ""),
         tech_stack: &["Rust", "Polars", "Pyroscope", "Python", "PySpark", "Kafka"],
     },
     Project {
@@ -373,6 +378,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "A linking algorithm that reconstructs a Git history graph from legacy Excel projects, automated across the team's version control migration.",
         img_src: "/images/legacy_git.png",
+        external_link: ("", ""),
         tech_stack: &["Rust", "Polars", "Git2", "Python", "Makefile"],
     },
     Project {
@@ -381,6 +387,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "Club management, online membership payment and a user dashboard shared by several internal applications at the French Football Federation.",
         img_src: "/images/fff.png",
+        external_link: ("", ""),
         tech_stack: &[
             "Angular",
             "React",
@@ -396,6 +403,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "Aligned RealSense D345 camera and DMU11 IMU data in C++, interpolated with SLERP and published the fused stream as a ROS topic.",
         img_src: "/images/trimble_robot.png",
+        external_link: ("", ""),
         tech_stack: &["C++", "SLERP", "ROS", "OpenCV", "Python"],
     },
     Project {
@@ -404,6 +412,7 @@ pub const PROJECTS: [Project; 8] = [
         description:
             "A robot that pushes objects out of a ring using luminosity and infrared sensors, implemented with finite state machine methodology.",
         img_src: "/images/sumo_robot.png",
+        external_link: ("", ""),
         tech_stack: &["C", "Arduino", "Blender"],
     },
     Project {
@@ -411,6 +420,7 @@ pub const PROJECTS: [Project; 8] = [
         link: "/Projects/E2ee",
         description: "A small Rust CLI for end-to-end encryption.",
         img_src: "/images/lock.jpeg",
+        external_link: ("", ""),
         tech_stack: &["Rust", "CLI", "Cargo", "Makefile"],
     },
 ];

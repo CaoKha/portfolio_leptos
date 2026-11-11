@@ -22,6 +22,7 @@ pub fn Projects() -> impl IntoView {
                         description=project.description
                         img_src=project.img_src
                         tech_stack=project.tech_stack
+                        external_link=project.external_link
                     />
                 </li>
             }

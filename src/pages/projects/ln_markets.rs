@@ -82,7 +82,15 @@ pub fn LnMarkets() -> impl IntoView {
                             "4: Documentation site"
                         </h1>
                         <p class="pt-5 dark:text-slate-400 sm:text-xl">
-                            "Forked Fumadocs and wrote all the documentation pages on docs.lnmarkets.com."
+                            "Forked Fumadocs and wrote all the documentation pages on "
+                            <a
+                                class="underline decoration-teal-400/50 underline-offset-2 hover:text-teal-600 dark:text-teal-300 dark:hover:text-teal-200"
+                                href="https://docs.lnmarkets.com/en/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                "docs.lnmarkets.com"
+                            </a> "."
                         </p>
                         <br/>
                     </div>
